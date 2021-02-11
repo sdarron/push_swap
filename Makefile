@@ -6,7 +6,7 @@
 #    By: sdarron <sdarron@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/12/30 21:52:25 by sdarron           #+#    #+#              #
-#    Updated: 2020/09/09 02:59:42 by sdarron          ###   ########.fr        #
+#    Updated: 2020/10/01 00:30:38 by sdarron          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,7 +16,7 @@ CHECKER = checker
 
 PUSH_SWAP = push_swap
 
-GCC = gcc
+GCC = clang
 
 LIB = libft/libft.a
 
@@ -31,14 +31,20 @@ SRCS =	func.c \
 		mov.c \
 		mov1.c \
 		mov2.c \
+		mov3.c \
 		compareps.c \
 		psmov.c \
 		psmov1.c \
 		psmov2.c \
 		psmov3.c \
 		psmovhundred.c \
+		psmovhundred1.c \
+		psmovhund500.c \
+		psmovhund500_1.c \
+		psmovhund500_2.c \
+		psmovhundred2.c \
 
-FLAGS =-fPIE -Wall -Wextra -Werror
+FLAGS = -fPIE -Wall -Wextra -Werror
 
 OBJ = $(SRCS:.c=.o)
 

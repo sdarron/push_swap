@@ -6,7 +6,7 @@
 /*   By: sdarron <sdarron@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/29 04:26:48 by sdarron           #+#    #+#             */
-/*   Updated: 2020/09/16 03:13:33 by sdarron          ###   ########.fr       */
+/*   Updated: 2020/10/08 16:13:22 by sdarron          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,11 +35,10 @@ long long int		ft_atoi_max(const char *str)
 
 void				allfree(t_data *data)
 {
-	free(data->anumbs);
-	free(data->bnumbs);
-	data->modnumbs = 0;
-	free(data->modnumbs);
-	free(data);
+	ft_memdel((void**)&data->modnumbs);
+	ft_memdel((void**)&data->anumbs);
+	ft_memdel((void**)&data->bnumbs);
+	ft_memdel((void**)&data);
 }
 
 void				initdata(t_data *data, int len)
@@ -47,16 +46,27 @@ void				initdata(t_data *data, int len)
 	if (!(data->anumbs = (long long int *)malloc(sizeof(long long int) *
 	(len))))
 		return ;
-	ft_bzero(data->anumbs, len);
-	if (!(data->bnumbs = (int *)malloc(sizeof(int) * len)))
+	if (!(data->bnumbs = (long long int *)malloc(sizeof(long long int) * len)))
 		return ;
-	ft_bzero(data->bnumbs, len);
+	if (!(data->modnumbs =
+		(long long int *)malloc(sizeof(long long int) * len)))
+		return ;
 	data->lenb = 0;
 	data->lena = len;
+	data->v = 0;
 }
 
 int					noparameters(void)
 {
-	//ft_putstr("Please, enter parameters!\n");
 	return (0);
+}
+
+int					pursb500(t_data *d, int k, int f)
+{
+	if (f == 0 && d->lenb > 1 && d->bnumbs[1] == d->modnumbs[k])
+	{
+		putsb(d);
+		f = 1;
+	}
+	return (f);
 }

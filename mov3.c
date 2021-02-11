@@ -1,27 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   model.c                                            :+:      :+:    :+:   */
+/*   mov3.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sdarron <sdarron@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/08/30 03:05:08 by sdarron           #+#    #+#             */
-/*   Updated: 2020/10/03 02:29:46 by sdarron          ###   ########.fr       */
+/*   Created: 2020/10/01 00:28:47 by sdarron           #+#    #+#             */
+/*   Updated: 2020/10/01 00:29:49 by sdarron          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-long long int		*ft_model(int l, t_data *data)
+void	ft_movrrr(t_data *data, int l)
 {
-	int	i;
-
-	i = 0;
-	while (i < l)
-	{
-		data->modnumbs[i] = data->anumbs[i];
-		i++;
-	}
-	ft_quicksort(data->modnumbs, 0, l - 1);
-	return (data->modnumbs);
+	ft_movrrb(data, l);
+	ft_movrra(data, l);
 }

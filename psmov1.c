@@ -6,24 +6,16 @@
 /*   By: sdarron <sdarron@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/08 01:31:46 by sdarron           #+#    #+#             */
-/*   Updated: 2020/09/16 03:02:17 by sdarron          ###   ########.fr       */
+/*   Updated: 2020/10/09 03:09:35 by sdarron          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void		initdata5(t_data *data, t_data5 *data5)
-{
-	data5->min1 = data->anumbs[0];
-	data5->min2 = data->anumbs[0];
-	data5->n1 = 0;
-	data5->n2 = 0;
-}
-
 void		endmovlen5(t_data *data, int l)
 {
 	movlen3(data, l);
-	if (data->bnumbs[0] < data->bnumbs[1] && l == 5)
+	if (data->lenb > 1 && data->bnumbs[0] < data->bnumbs[1] && l == 5)
 		putsb(data);
 	if (l == 5)
 		putpa(data, l);
@@ -83,7 +75,7 @@ void		movlenonly5(t_data *data, t_data5 *data5, int l)
 	if (data5->n2 > data5->n1)
 	{
 		while (data->anumbs[0] != data5->min2)
-	 	 	putra(data, l);
+			putra(data, l);
 		putpb(data, l);
 	}
 }
@@ -107,4 +99,5 @@ void		movlen5(t_data *data, int l)
 		movlenonly5(data, data5, l);
 	endmovlen5(data, l);
 	free(data5);
+	data5 = NULL;
 }

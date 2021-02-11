@@ -12,7 +12,7 @@
 
 #include "libft.h"
 
-void	ft_quicksort(int arr[], int beg, int end)
+void	ft_quicksort(long long int arr[], int beg, int end)
 {
 	int	i;
 	int	j;

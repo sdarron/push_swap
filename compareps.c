@@ -6,13 +6,13 @@
 /*   By: sdarron <sdarron@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/06 23:55:14 by sdarron           #+#    #+#             */
-/*   Updated: 2020/09/11 01:30:14 by sdarron          ###   ########.fr       */
+/*   Updated: 2020/10/08 15:42:31 by sdarron          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int		compareps(long long int *anumbs, int *modnumbs, int l)
+int		compareps(long long int *anumbs, long long int *modnumbs, int l)
 {
 	int	i;
 	int	f;
@@ -21,7 +21,7 @@ int		compareps(long long int *anumbs, int *modnumbs, int l)
 	f = 0;
 	while (i < l)
 	{
-		if ((int)anumbs[i] != modnumbs[i])
+		if (anumbs[i] != modnumbs[i])
 		{
 			f = 1;
 			break ;

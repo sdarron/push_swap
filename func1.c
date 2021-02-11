@@ -6,13 +6,13 @@
 /*   By: sdarron <sdarron@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/06 23:46:27 by sdarron           #+#    #+#             */
-/*   Updated: 2020/09/11 01:40:29 by sdarron          ###   ########.fr       */
+/*   Updated: 2020/10/01 00:15:28 by sdarron          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int			checknum(int ac, char **av)
+int			longlongnumb(int ac, char **av)
 {
 	int		i;
 	int		l;
@@ -23,6 +23,41 @@ int			checknum(int ac, char **av)
 	{
 		while (av[i][l] != '\0')
 		{
+			if (l > 11)
+			{
+				ft_putstr("Error\n");
+				return (1);
+			}
+			l++;
+		}
+		l = 0;
+		i++;
+	}
+	return (0);
+}
+
+int			visual(t_data *data, char **av, int i)
+{
+	if (av[i][0] == '-' && av[i][1] == 'v')
+	{
+		data->v = 1;
+		i++;
+	}
+	return (i);
+}
+
+int			checknum(t_data *data, int ac, char **av)
+{
+	int		i;
+	int		l;
+
+	l = 0;
+	i = 1;
+	while (i < ac)
+	{
+		while (av[i][l] != '\0')
+		{
+			i = visual(data, av, i);
 			if (av[i][0] == '-' && l == 0)
 				l++;
 			if (av[i][l] > 57 || av[i][l] < 48)
@@ -35,7 +70,7 @@ int			checknum(int ac, char **av)
 		l = 0;
 		i++;
 	}
-	return (0);
+	return (longlongnumb(ac, av));
 }
 
 int			checkrep(int l, long long int *numbs)

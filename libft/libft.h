@@ -90,7 +90,7 @@ void				ft_lstdel(t_list **alst, void (*del)(void *, size_t));
 void				ft_lstadd(t_list **alst, t_list *new);
 void				ft_lstiter(t_list *lst, void (*f)(t_list *elem));
 t_list				*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem));
-void				ft_quicksort(int arr[], int left, int right);
+void				ft_quicksort(long long int arr[], int left, int right);
 int					ft_arrmax(int arr[], int beg, int end);
 int					ft_arrmin(int arr[], int beg, int end);
 int					lineoutput(char **fd_arr, char **line, int count);

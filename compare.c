@@ -12,7 +12,7 @@
 
 #include "push_swap.h"
 
-void		compareanumbs(long long int *anumbs, int *modnumbs, int l)
+void		compareanumbs(long long int *anumbs, long long int *modnumbs, int l)
 {
 	int	i;
 	int	f;
